@@ -1,0 +1,11 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="en">locale/monedadelmundo_en.qm</file>
+        <file alias="es">locale/monedadelmundo_es.qm</file>
+        <file alias="es_CL">locale/monedadelmundo_es_CL.qm</file>
+        <file alias="es_CO">locale/monedadelmundo_es_CO.qm</file>
+        <file alias="es_DO">locale/monedadelmundo_es_DO.qm</file>
+        <file alias="es_MX">locale/monedadelmundo_es_MX.qm</file>
+        <file alias="es_VE">locale/monedadelmundo_es_VE.qm</file>
+    </qresource>
+</RCC>

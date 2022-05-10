@@ -3,12 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/monedadelmundo-config.h>
 #endif
 
 #include <qt/optionsmodel.h>
 
-#include <qt/bitcoinunits.h>
+#include <qt/monedadelmundounits.h>
 #include <qt/guiconstants.h>
 #include <qt/guiutil.h>
 
@@ -72,15 +72,15 @@ void OptionsModel::Init(bool resetSettings)
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
 
     // Display
-    if (!settings.contains("DisplayBitcoinUnit")) {
-        settings.setValue("DisplayBitcoinUnit", QVariant::fromValue(BitcoinUnit::BTC));
+    if (!settings.contains("DisplayMonedaDelMundoUnit")) {
+        settings.setValue("DisplayMonedaDelMundoUnit", QVariant::fromValue(MonedaDelMundoUnit::BTC));
     }
-    QVariant unit = settings.value("DisplayBitcoinUnit");
-    if (unit.canConvert<BitcoinUnit>()) {
-        m_display_bitcoin_unit = unit.value<BitcoinUnit>();
+    QVariant unit = settings.value("DisplayMonedaDelMundoUnit");
+    if (unit.canConvert<MonedaDelMundoUnit>()) {
+        m_display_monedadelmundo_unit = unit.value<MonedaDelMundoUnit>();
     } else {
-        m_display_bitcoin_unit = BitcoinUnit::BTC;
-        settings.setValue("DisplayBitcoinUnit", QVariant::fromValue(m_display_bitcoin_unit));
+        m_display_monedadelmundo_unit = MonedaDelMundoUnit::BTC;
+        settings.setValue("DisplayMonedaDelMundoUnit", QVariant::fromValue(m_display_monedadelmundo_unit));
     }
 
     if (!settings.contains("strThirdPartyTxUrls"))
@@ -171,7 +171,7 @@ void OptionsModel::Init(bool resetSettings)
         // The call order is:
         //
         // InitParameterInteraction()
-        //     would set -listenonion=0 if it sees -listen=0, but for bitcoin-qt with
+        //     would set -listenonion=0 if it sees -listen=0, but for monedadelmundo-qt with
         //     fListen=false -listen is 1 at this point
         //
         // OptionsModel::Init()
@@ -384,7 +384,7 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return m_sub_fee_from_amount;
 #endif
         case DisplayUnit:
-            return QVariant::fromValue(m_display_bitcoin_unit);
+            return QVariant::fromValue(m_display_monedadelmundo_unit);
         case ThirdPartyTxUrls:
             return strThirdPartyTxUrls;
         case Language:
@@ -594,11 +594,11 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
 
 void OptionsModel::setDisplayUnit(const QVariant& new_unit)
 {
-    if (new_unit.isNull() || new_unit.value<BitcoinUnit>() == m_display_bitcoin_unit) return;
-    m_display_bitcoin_unit = new_unit.value<BitcoinUnit>();
+    if (new_unit.isNull() || new_unit.value<MonedaDelMundoUnit>() == m_display_monedadelmundo_unit) return;
+    m_display_monedadelmundo_unit = new_unit.value<MonedaDelMundoUnit>();
     QSettings settings;
-    settings.setValue("DisplayBitcoinUnit", QVariant::fromValue(m_display_bitcoin_unit));
-    Q_EMIT displayUnitChanged(m_display_bitcoin_unit);
+    settings.setValue("DisplayMonedaDelMundoUnit", QVariant::fromValue(m_display_monedadelmundo_unit));
+    Q_EMIT displayUnitChanged(m_display_monedadelmundo_unit);
 }
 
 void OptionsModel::setRestartRequired(bool fRequired)
@@ -623,7 +623,7 @@ void OptionsModel::checkAndMigrate()
     if (settingsVersion < CLIENT_VERSION)
     {
         // -dbcache was bumped from 100 to 300 in 0.13
-        // see https://github.com/bitcoin/bitcoin/pull/8273
+        // see https://github.com/monedadelmundo/monedadelmundo/pull/8273
         // force people to upgrade to the new value if they are using 100MB
         if (settingsVersion < 130000 && settings.contains("nDatabaseCache") && settings.value("nDatabaseCache").toLongLong() == 100)
             settings.setValue("nDatabaseCache", (qint64)nDefaultDbCache);

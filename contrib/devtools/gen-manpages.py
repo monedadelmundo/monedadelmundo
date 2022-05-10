@@ -8,12 +8,12 @@ import sys
 import tempfile
 
 BINARIES = [
-'src/bitcoind',
-'src/bitcoin-cli',
-'src/bitcoin-tx',
-'src/bitcoin-wallet',
-'src/bitcoin-util',
-'src/qt/bitcoin-qt',
+'src/monedadelmundod',
+'src/monedadelmundo-cli',
+'src/monedadelmundo-tx',
+'src/monedadelmundo-wallet',
+'src/monedadelmundo-util',
+'src/qt/monedadelmundo-qt',
 ]
 
 # Paths to external utilities.
