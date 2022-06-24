@@ -111,18 +111,18 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfa;
-        pchMessageStart[1] = 0xe5;
-        pchMessageStart[2] = 0x8b;
-        pchMessageStart[3] = 0xc3;
+        pchMessageStart[0] = 0xd3;
+        pchMessageStart[1] = 0xbe;
+        pchMessageStart[2] = 0x9d;
+        pchMessageStart[3] = 0xc8;
         nDefaultPort = 8333;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 460;
         m_assumed_chain_state_size = 6;
 
-        genesis = CreateGenesisBlock(1650205830, 1, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1654806666, 2, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x3c75c0a16242b4f02c25ca341729a115e5162d057013a11a0b70e08f091acd96"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0ff93d06380b4bb8716aa5095ea1d819f7c1722158543ce4ae67751cfe382dd3"));
         assert(genesis.hashMerkleRoot == uint256S("0x525618531e75a70187064adb40f297f67ac4b2f701b74501c4c98153720a1599"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
@@ -132,11 +132,11 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,10);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,133);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0xBD, 0xD6, 0xD9, 0xB4};
-        base58Prefixes[EXT_SECRET_KEY] = {0xBD, 0xD6, 0xEC, 0xFD};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,10);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,15);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,138);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0xC8, 0xA9, 0xD5, 0xAA};
+        base58Prefixes[EXT_SECRET_KEY] = {0xC8, 0xA9, 0xF4, 0xAC};
 
         bech32_hrp = "mnmdm";
 
@@ -149,7 +149,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x3c75c0a16242b4f02c25ca341729a115e5162d057013a11a0b70e08f091acd96")},
+                {0, uint256S("0x0ff93d06380b4bb8716aa5095ea1d819f7c1722158543ce4ae67751cfe382dd3")},
             }
         };
 
@@ -214,18 +214,18 @@ public:
         consensus.nMinimumChainWork = consensus.powLimit;
         consensus.defaultAssumeValid = uint256S("");
 
-        pchMessageStart[0] = 0xbf;
-        pchMessageStart[1] = 0xab;
-        pchMessageStart[2] = 0xa2;
-        pchMessageStart[3] = 0xd7;
+        pchMessageStart[0] = 0x85;
+        pchMessageStart[1] = 0x91;
+        pchMessageStart[2] = 0xdc;
+        pchMessageStart[3] = 0xb9;
         nDefaultPort = 18333;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 40;
         m_assumed_chain_state_size = 2;
 
-        genesis = CreateGenesisBlock(1650205830, 1, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1654806666, 2, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x3c75c0a16242b4f02c25ca341729a115e5162d057013a11a0b70e08f091acd96"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0ff93d06380b4bb8716aa5095ea1d819f7c1722158543ce4ae67751cfe382dd3"));
         assert(genesis.hashMerkleRoot == uint256S("0x525618531e75a70187064adb40f297f67ac4b2f701b74501c4c98153720a1599"));
 
         vFixedSeeds.clear();
@@ -233,11 +233,11 @@ public:
         // nodes with support for servicebits filtering should be at the top
         //vSeeds.emplace_back("");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,116);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,201);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,244);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0xBD, 0xCE, 0x86, 0x9E};
-        base58Prefixes[EXT_SECRET_KEY] = {0xBD, 0xCE, 0xA0, 0x96};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,121);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,206);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,249);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0xC8, 0xD0, 0xC3, 0xE0};
+        base58Prefixes[EXT_SECRET_KEY] = {0xC8, 0xD0, 0xC9, 0x8F};
 
         bech32_hrp = "tnmdm";
 
@@ -250,7 +250,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x3c75c0a16242b4f02c25ca341729a115e5162d057013a11a0b70e08f091acd96")},
+                {0, uint256S("0x0ff93d06380b4bb8716aa5095ea1d819f7c1722158543ce4ae67751cfe382dd3")},
             }
         };
 
@@ -363,18 +363,18 @@ public:
         nDefaultPort = 38333;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1650205830, 1, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1654806666, 2, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x3c75c0a16242b4f02c25ca341729a115e5162d057013a11a0b70e08f091acd96"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0ff93d06380b4bb8716aa5095ea1d819f7c1722158543ce4ae67751cfe382dd3"));
         assert(genesis.hashMerkleRoot == uint256S("0x525618531e75a70187064adb40f297f67ac4b2f701b74501c4c98153720a1599"));
 
         vFixedSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,116);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,201);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,244);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0xBD, 0xCE, 0x86, 0x9E};
-        base58Prefixes[EXT_SECRET_KEY] = {0xBD, 0xCE, 0xA0, 0x96};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,121);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,206);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,249);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0xC8, 0xD0, 0xC3, 0xE0};
+        base58Prefixes[EXT_SECRET_KEY] = {0xC8, 0xD0, 0xC9, 0x8F};
 
         bech32_hrp = "snmdm";
 
@@ -432,10 +432,10 @@ public:
         consensus.nMinimumChainWork = uint256{};
         consensus.defaultAssumeValid = uint256{};
 
-        pchMessageStart[0] = 0xf2;
-        pchMessageStart[1] = 0xce;
-        pchMessageStart[2] = 0x88;
-        pchMessageStart[3] = 0xc9;
+        pchMessageStart[0] = 0xa8;
+        pchMessageStart[1] = 0xa9;
+        pchMessageStart[2] = 0xba;
+        pchMessageStart[3] = 0xc6;
         nDefaultPort = 18444;
         nPruneAfterHeight = args.GetBoolArg("-fastprune", false) ? 100 : 1000;
         m_assumed_blockchain_size = 0;
@@ -443,9 +443,9 @@ public:
 
         UpdateActivationParametersFromArgs(args);
 
-        genesis = CreateGenesisBlock(1650205830, 1, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1654806666, 2, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x3c75c0a16242b4f02c25ca341729a115e5162d057013a11a0b70e08f091acd96"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0ff93d06380b4bb8716aa5095ea1d819f7c1722158543ce4ae67751cfe382dd3"));
         assert(genesis.hashMerkleRoot == uint256S("0x525618531e75a70187064adb40f297f67ac4b2f701b74501c4c98153720a1599"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
@@ -459,7 +459,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x3c75c0a16242b4f02c25ca341729a115e5162d057013a11a0b70e08f091acd96")},
+                {0, uint256S("0x0ff93d06380b4bb8716aa5095ea1d819f7c1722158543ce4ae67751cfe382dd3")},
             }
         };
 
@@ -476,11 +476,11 @@ public:
             0
         };
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,116);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,201);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,244);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0xBD, 0xCE, 0x86, 0x9E};
-        base58Prefixes[EXT_SECRET_KEY] = {0xBD, 0xCE, 0xA0, 0x96};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,121);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,206);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,249);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0xC8, 0xD0, 0xC3, 0xE0};
+        base58Prefixes[EXT_SECRET_KEY] = {0xC8, 0xD0, 0xC9, 0x8F};
 
         bech32_hrp = "rtmdm";
 
